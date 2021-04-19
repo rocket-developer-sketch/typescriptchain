@@ -17,6 +17,13 @@ class Block {
          ): string => 
          CryptoJS.SHA256(index + previousHash + timestamp + data).toString();
 
+    static validateStructure = (aBlcok: Block) : boolean => 
+    typeof aBlcok.index === "number" && 
+    typeof aBlcok.hash === "string" && 
+    typeof aBlcok.previousHash === "string" &&
+    typeof aBlcok.timestamp === "number" &&
+    typeof aBlcok.data === "string";
+
 
     constructor(
         index:number,
@@ -67,7 +74,27 @@ const createNewBlock = (data:string) : Block => {
     return newBlock;
 }
 
-console.log(createNewBlock("hello"), createNewBlock("bye bye"));
+const getHashForBlock = (aBlock: Block) : string => 
+    Block.calculateBlockHash(aBlock.index, aBlock.previousHash, aBlock.timestamp, aBlock.data);
+
+//구조 유효성 검사
+const isBlockValid = (
+    candidateBlock: Block, 
+    previousBlock: Block
+    ) : boolean => {
+    // 블록의 구조 유효성 체크
+    if (!Block.validateStructure(candidateBlock)) {
+        return false;
+    } else if (previousBlock.index + 1 !== candidateBlock.index) { 
+        return false;
+    } else if (previousBlock.hash !== candidateBlock.previousHash) {
+        return false;
+    } else if (getHashForBlock(candidateBlock) !== candidateBlock.hash) { // 들어온 블록의 해쉬가 실제로 있는 지 체크
+        return false;
+    } else {
+        return true;
+    }
+};
 
 // block 은 hash를 가짐
 // hash : 모든 속성을 엄청 길고 수학적으로 이상한 하나의 문자열로 결합한 것
