@@ -17,3 +17,7 @@
 
 // 설정 후 bash 에 tsc 입력
 // tsc는 index.ts파일에 있는 코드를 컴파일해서 index.js, index.js.map 파일을 만들어 줌
+
+// Typescript 실행
+// tsc(컴파일) -> node index.js 
+// Node.js 는 Typescript를 이해하지 못하기 때문에 일반적인 Javascript코드로 컴파일하는 작업이 필요
