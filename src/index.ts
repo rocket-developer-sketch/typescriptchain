@@ -6,6 +6,18 @@ class Block {
     public previousHash: string;
     public data: string;
     public timestamp: number;
+
+    // static method
+    // string 리턴
+    static calculateBlockHash = (
+        index:number, 
+        previousHash: string, 
+        timestamp:number,
+         data:string
+         ): string => 
+         CryptoJS.SHA256(index + previousHash + timestamp + data).toString();
+
+
     constructor(
         index:number,
         hash: string, 
