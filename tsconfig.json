@@ -6,9 +6,10 @@
     "compilerOptions": {
         "module" : "commonjs",
         "target" : "ES2015",
-        "sourceMap": true
+        "sourceMap": true,
+        "outDir": "dist"
     },
-    "include" : ["index.ts"],
+    "include" : ["src/**/*"],
     "exclude": ["node_modules"] 
 }
 
@@ -21,3 +22,10 @@
 // Typescript 실행
 // tsc(컴파일) -> node index.js 
 // Node.js 는 Typescript를 이해하지 못하기 때문에 일반적인 Javascript코드로 컴파일하는 작업이 필요
+
+// TSC watch 
+// npm i -D tsc-watch
+// npm start 후, tsc-watch module 을 찾을 수 없다면, npm link typescript 로 링크 해준 후 다시 npm start
+
+// Typescript는 src 폴더
+// 컴파일 된 것들은 dist 폴더
