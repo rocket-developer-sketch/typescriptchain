@@ -96,6 +96,12 @@ const isBlockValid = (
     }
 };
 
+const addBlock = (candidateBlock: Block) : void => {
+    if (isBlockValid(candidateBlock, getLatestBlock())) {
+        blockchain.push(candidateBlock);
+    }
+}
+
 // block 은 hash를 가짐
 // hash : 모든 속성을 엄청 길고 수학적으로 이상한 하나의 문자열로 결합한 것
 
