@@ -72,7 +72,7 @@ const createNewBlock = (data:string) : Block => {
     );
 
     addBlock(newBlock);
-    
+
     return newBlock;
 }
 
@@ -103,6 +103,13 @@ const addBlock = (candidateBlock: Block) : void => {
         blockchain.push(candidateBlock);
     }
 }
+
+createNewBlock("second block");
+createNewBlock("third block");
+createNewBlock("fourth block");
+
+
+console.log(blockchain);
 
 // block 은 hash를 가짐
 // hash : 모든 속성을 엄청 길고 수학적으로 이상한 하나의 문자열로 결합한 것
