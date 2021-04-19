@@ -1,6 +1,6 @@
-const sayHi = (name:string, age:number, gneder:string) => {
+const sayHi = (name:string, age:number, gneder:string): void => {
     console.log(`Hello ${name}, you are ${age}, you are a ${gneder}`);
-}
+};
 
 sayHi( "Nicolas", 44, "male");
 
