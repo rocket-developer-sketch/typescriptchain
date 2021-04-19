@@ -71,6 +71,8 @@ const createNewBlock = (data:string) : Block => {
         newTimestamp
     );
 
+    addBlock(newBlock);
+    
     return newBlock;
 }
 
