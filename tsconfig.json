@@ -14,3 +14,6 @@
 
 // "include" : {} 어떤 파일들이 컴파일 과정에 포함되는 지 Typescript에게 알려주기 위함
 // 컴파일 과정에서 포함할 파일의 배열을 적ㅇ으면 됌
+
+// 설정 후 bash 에 tsc 입력
+// tsc는 index.ts파일에 있는 코드를 컴파일해서 index.js, index.js.map 파일을 만들어 줌
