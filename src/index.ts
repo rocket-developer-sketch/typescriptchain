@@ -1,12 +1,13 @@
 // 인터페이스는 javascript로 컴파일 되지 않음.
 // 그렇기 때문에 class 사용
 // 속성 선언, 속성들이 가진 권한 정해줘야 함.
+// Java의 접근제어자 같이 사용
 class Human {
     public name: string;
     public age: number;
     public gender: string;
 
-    constructor(name:string, age:number, gender?:string){
+    constructor(name:string, age:number, gender:string){
         this.name = name;
         this.age = age;
         this.gender = gender;
