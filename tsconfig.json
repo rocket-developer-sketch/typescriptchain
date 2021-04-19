@@ -1,0 +1,16 @@
+// how to commpile javascript
+// module : node.js 평범하게 사용하고 다양한 걸 import하거나 export할 수 있도록 만드는 것임
+// target : 어떤 버전의 javasciprt로 컴파일 되고 싶은 지
+// sourmap : sourcemap 처리 하고 싶은 지 
+{
+    "compilerOptions": {
+        "module" : "commonjs",
+        "target" : "ES2015",
+        "sourceMap": true
+    },
+    "include" : ["index.ts"],
+    "exclude": ["node_modules"] 
+}
+
+// "include" : {} 어떤 파일들이 컴파일 과정에 포함되는 지 Typescript에게 알려주기 위함
+// 컴파일 과정에서 포함할 파일의 배열을 적ㅇ으면 됌
